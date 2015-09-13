@@ -1,0 +1,73 @@
+TIMESTAMP-	DATE-------------------	REMOTE_ADDR ... PORT	USER_AGENT	REFERER	TARGET
+1395431158	2014/03/21 Fri 16:45:58	193.200.150.125	58068	http://Anonymouse.org/ (Unix)		http://svl.lsd.org.br:8080/fn/
+1395431718	2014/03/21 Fri 16:55:18	66.249.88.234	50982	Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; Google Web Preview) Chrome/27.0.1453 Safari/537.36	http://www.google.com/search	http://svl.lsd.org.br:8080/fn/
+1395431798	2014/03/21 Fri 16:56:38	69.171.234.112	63836	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395431912	2014/03/21 Fri 16:58:32	69.171.234.113	52476	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395431990	2014/03/21 Fri 16:59:50	69.171.234.114	64463	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395432218	2014/03/21 Fri 17:03:38	66.249.88.234	64006	Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; Google Web Preview) Chrome/27.0.1453 Safari/537.36	http://www.google.com/search	http://svl.lsd.org.br:8080/fn/?v=2
+1395432249	2014/03/21 Fri 17:04:09	69.171.234.117	64204	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?v=2
+1395432303	2014/03/21 Fri 17:05:03	69.171.234.116	59838	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395432378	2014/03/21 Fri 17:06:18	69.171.234.117	38041	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395432379	2014/03/21 Fri 17:06:19	69.171.234.119	53219	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395432777	2014/03/21 Fri 17:12:57	69.171.234.116	54884	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395432778	2014/03/21 Fri 17:12:58	69.171.234.113	56605	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395432788	2014/03/21 Fri 17:13:08	69.171.234.119	52744	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395432792	2014/03/21 Fri 17:13:12	69.171.234.115	56069	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395433534	2014/03/21 Fri 17:25:34	66.249.88.234	39532	Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; Google Web Preview) Chrome/27.0.1453 Safari/537.36	http://www.google.com/search	http://svl.lsd.org.br:8080/fn/?v3
+1395433551	2014/03/21 Fri 17:25:51	69.171.234.119	39675	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?v3
+1395434256	2014/03/21 Fri 17:37:36	186.232.35.212	53163	Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.154 Safari/537.36		http://svl.lsd.org.br:8080/fn/
+1395434396	2014/03/21 Fri 17:39:56	69.171.234.112	42047	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395434397	2014/03/21 Fri 17:39:57	69.171.234.113	46781	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395434447	2014/03/21 Fri 17:40:47	69.171.234.119	36290	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395434448	2014/03/21 Fri 17:40:48	69.171.234.117	49706	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395434932	2014/03/21 Fri 17:48:52	69.171.234.119	61883	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395436397	2014/03/21 Fri 18:13:17	186.232.35.212	53274	Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.154 Safari/537.36		http://svl.lsd.org.br:8080/fn/
+1395438285	2014/03/21 Fri 18:44:45	177.16.159.168	8719	Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.154 Safari/537.36		http://svl.lsd.org.br:8080/fn/
+1395438408	2014/03/21 Fri 18:46:48	69.171.234.116	63856	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395438409	2014/03/21 Fri 18:46:49	69.171.234.115	52344	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395438434	2014/03/21 Fri 18:47:14	69.171.234.118	36059	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395438435	2014/03/21 Fri 18:47:15	69.171.234.113	48889	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395438454	2014/03/21 Fri 18:47:34	69.171.234.116	55820	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395438485	2014/03/21 Fri 18:48:05	69.171.234.112	55431	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395438570	2014/03/21 Fri 18:49:30	69.171.234.114	49415	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395438572	2014/03/21 Fri 18:49:32	69.171.234.118	53085	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395439073	2014/03/21 Fri 18:57:53	69.171.234.113	40032	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395439074	2014/03/21 Fri 18:57:54	69.171.234.117	53141	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395439100	2014/03/21 Fri 18:58:20	69.171.234.119	40757	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395439101	2014/03/21 Fri 18:58:21	69.171.234.119	40757	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395439234	2014/03/21 Fri 19:00:34	69.171.234.117	45249	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395440290	2014/03/21 Fri 19:18:10	69.171.234.119	45692	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395440291	2014/03/21 Fri 19:18:11	69.171.234.114	55137	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395440312	2014/03/21 Fri 19:18:32	69.171.234.117	60223	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395440314	2014/03/21 Fri 19:18:34	69.171.234.116	57770	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395441304	2014/03/21 Fri 19:35:04	69.171.234.114	59864	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395441350	2014/03/21 Fri 19:35:50	69.171.234.118	37322	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395441351	2014/03/21 Fri 19:35:51	69.171.234.115	51795	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395442034	2014/03/21 Fri 19:47:14	69.171.234.115	34527	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395442035	2014/03/21 Fri 19:47:15	69.171.234.118	58409	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395442111	2014/03/21 Fri 19:48:31	69.171.234.112	36507	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395442178	2014/03/21 Fri 19:49:38	69.171.234.116	45316	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395442179	2014/03/21 Fri 19:49:39	69.171.234.117	41741	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395442228	2014/03/21 Fri 19:50:28	69.171.234.112	38310	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395442236	2014/03/21 Fri 19:50:36	69.171.234.119	65511	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395442257	2014/03/21 Fri 19:50:57	69.171.234.116	63790	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395443871	2014/03/21 Fri 20:17:51	69.171.234.118	46760	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395443872	2014/03/21 Fri 20:17:52	69.171.234.113	62971	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395444656	2014/03/21 Fri 20:30:56	69.171.234.116	41116	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395444658	2014/03/21 Fri 20:30:58	69.171.234.118	43827	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395444709	2014/03/21 Fri 20:31:49	69.171.234.113	58255	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395444710	2014/03/21 Fri 20:31:50	69.171.234.114	42770	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395444789	2014/03/21 Fri 20:33:09	69.171.234.115	42219	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395444790	2014/03/21 Fri 20:33:10	69.171.234.113	41833	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395444839	2014/03/21 Fri 20:33:59	69.171.234.112	55110	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395444981	2014/03/21 Fri 20:36:21	69.171.234.117	48514	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395445009	2014/03/21 Fri 20:36:49	69.171.234.115	37270	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395445028	2014/03/21 Fri 20:37:08	69.171.234.118	44878	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395445029	2014/03/21 Fri 20:37:09	69.171.234.117	40378	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/?fb_locale=pt_BR
+1395445392	2014/03/21 Fri 20:43:12	69.171.234.114	47892	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395445413	2014/03/21 Fri 20:43:33	69.171.234.119	36258	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/fn/
+1395445778	2014/03/21 Fri 20:49:38	69.171.234.113	36886	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/git/fn/
+1395445779	2014/03/21 Fri 20:49:39	69.171.234.117	53189	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/git/fn/?fb_locale=pt_BR
+1395445794	2014/03/21 Fri 20:49:54	66.249.88.234	58973	Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; Google Web Preview) Chrome/27.0.1453 Safari/537.36	http://www.google.com/search	http://svl.lsd.org.br:8080/git/fn/
+1395445820	2014/03/21 Fri 20:50:20	69.171.234.118	37679	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/git/fn/
+1395445821	2014/03/21 Fri 20:50:21	69.171.234.119	51068	facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)		http://svl.lsd.org.br:80/git/fn/?fb_locale=pt_BR

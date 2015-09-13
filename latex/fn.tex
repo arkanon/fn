@@ -1,0 +1,192 @@
+\documentclass[12pt, a4paper, fleqn]{article}
+
+% Arkanon <arkanon@lsd.org.br>
+% 2014/03/22 (Sat) 19:06:35 (BRS)
+%
+% v1.0 1994
+
+% sudo apt-get install texlive-lang-portuguese	# hifenizacao
+% sudo apt-get install texlive-latex-extra	# changepage
+
+\usepackage[top=1cm, bottom=1cm, left=1cm, right=1cm]{geometry}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage[table]{xcolor}
+\usepackage{enumerate}
+\usepackage{changepage}
+\usepackage{parskip}
+\usepackage{mathdots}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{lmodern}
+
+\usetikzlibrary{decorations.pathreplacing,calc}
+
+\hypersetup
+{
+  bookmarks    = true,    % show bookmarks bar?
+  unicode      = true,    % non-Latin characters in Acrobat’s bookmarks
+  pdftoolbar   = true,    % show Acrobat’s toolbar?
+  pdfmenubar   = true,    % show Acrobat’s menu?
+  pdfnewwindow = true,    % links in new window
+  colorlinks   = true,    % false: boxed links; true: colored links
+  linkcolor    = red,     % color of internal links (change box color with linkbordercolor)
+  citecolor    = green,   % color of links to bibliography
+  filecolor    = magenta, % color of file links
+  urlcolor     = blue,    % color of external links
+  pdffitwindow = false,   % window fit to page when opened
+  pdfstartview = {FitH},  % fits width (Horizontal) or height (Vertical) to the window
+  pdftitle     = {Função Exponencial Múltipla},
+% pdfsubject   = {},
+  pdfauthor    = {Arkanon <arkanon@lsd.org.br>},
+  pdfkeywords  = {matemática} {porcentagem}
+% pdfproducer  = {},
+% pdfcreator   = {},
+}
+
+\DeclareUnicodeCharacter{00B7}{\cdot}   % ·
+\DeclareUnicodeCharacter{2192}{\to}     % →
+\DeclareUnicodeCharacter{2248}{\approx} % ≈
+
+% middle dot      (·) &middot; &#183;  U+00B7
+% dot operator    (·) &sdot;   &#8901; U+22C5
+% bullet operator (∙)          &#8729; U+2219
+% bullet          (•) &bull;   &#8226; U+2022
+
+\newcommand{\mb}    [1]{{\color{black}#1}}
+
+\newcommand{\perc}  [1]{{\color{blue}#1\%}}
+
+\newcommand{\money} [1]{{\color{blue}\mbox{R}\textdollaroldstyle\,#1}}
+
+\newcommand{\email} [1]{<\href{mailto:#1}{#1}>}
+
+\newcommand{\signat}[2]
+{
+  \par
+  \vspace*{\fill}
+  \raggedleft{\scriptsize{{\color{#1}#2}}}
+}
+
+\newcommand{\blubox}[1]
+{
+  \begin{adjustwidth}{1.1cm}{1.6cm}
+    \fcolorbox
+    {mblue}
+    {lblue}
+    {
+      \parbox
+      {\linewidth}
+      {
+        \vskip5pt
+        \leftskip4pt
+        \rightskip4pt
+        \color{mblue}
+        #1
+        \vskip5pt
+      }
+    }
+  \end{adjustwidth}
+}
+
+\newcommand\leftidx[3]
+{
+  {\vphantom{#2}}#1#2#3
+}
+
+\newcommand{\veryhigh}[3]% base, exponent, text
+{
+  \begin{tikzpicture}[line width=1pt,join=round,cap=round]
+    \node (tempnode-0) at (0,0) {$#1$};
+    \foreach \mytext [count=\c] in {#2}
+    {
+      \pgfmathtruncatemacro{\b}{\c-1}
+      \node[above right,font=\scriptsize,inner sep=3pt] (tempnode-\c) at (tempnode-\b) {$\mytext$};
+      \xdef\maxexp{\c}
+    }
+    \draw [decoration={brace,amplitude=2pt,mirror,raise=2pt},decorate]
+          ($(tempnode-1.south east)+(-0.13,0.13)$) -- node[below right=-.5pt,font=\tiny] {#3} ($(tempnode-\maxexp.south east)+(-0.13,0.13)$);
+  \end{tikzpicture}
+}
+
+\definecolor{lgray}  {gray}{0.6}
+\definecolor{lyellow}{HTML}{FFF2AA}
+\definecolor{mblue}  {HTML}{365D95}
+\definecolor{lblue}  {HTML}{EAE8E3}
+
+%\everymath={\color{red}}
+
+
+
+\begin{document}
+
+\thispagestyle{empty}
+\pagestyle{empty}
+
+
+
+\begin{center}
+  {\LARGE Função Exponencial Múltipla}
+\end{center}
+
+\begin{flushright}
+  {\sf\small Arkanon \email{arkanon@lsd.org.br}}\\
+  {\sf\footnotesize 22/03/2014 19:09:06}
+\end{flushright}
+
+
+
+\[
+   \left(\frac{1}{e}\right)^{\left(\frac{1}{e}\right)} = e^{-e^{-1}} = \frac{1}{\sqrt[e]{e}}
+\]
+
+\[
+   \sqrt[{e}]{e} = e^{e^{-1}}
+\]
+
+\[
+   \sqrt[{\sqrt[{e}]{e}}]{e} = e^{e^{-e^{-1}}}
+\]
+
+\[
+   \sqrt[{\sqrt[{\sqrt[{\sqrt[e]{e}}]{e}}]{e}}]{e} = e^{e^{-e^{-e^{-e^{-1}}}}}
+\]
+
+\[
+   f_{n}(x) = x^{x^{\iddots^{\raisebox{-.4ex}{$\scriptscriptstyle x$}}}}
+\]
+
+\[
+   f_{n}{\scriptscriptstyle\left(\frac{1}{x}\right)} = x^{-x^{-x^{\iddots^{-x^{-1}}}}}
+\]
+
+\[
+   r_{n}(x) = \sqrt[{\sqrt[{\sqrt[{\leftidx{^{\sqrt[x]{x}}}{\ddots}{}}]{x}}]{x}}]{x} = x^{x^{-x^{-x^{\iddots^{-x^{-1}}}}}} = x^{f_{n-1}{\scriptscriptstyle\left(\frac{1}{x}\right)}}
+\]
+
+
+
+Seja
+\[
+   f_{n}(x) = \veryhigh{x}{x,{\rotatebox{45}{$\!\!\cdots$}},{\!\scriptscriptstyle x}}{$(n-1)$ vezes}
+\]
+e
+\[
+   \begin{tikzpicture}[line width=1pt,join=round,cap=round]
+     \node (a) at (0,0) {$r_{n}(x) = \sqrt[{\sqrt[{\sqrt[{\leftidx{^{\sqrt[x]{x}}}{\ddots}{}}]{x}}]{x}}]{x}$};
+     \draw [decoration={brace,amplitude=2pt,mirror,raise=2pt},decorate]
+           ($(1.35,0)$) -- node[above right=0pt,font=\tiny] {$(n-1)$ vezes} ($(.42,.55)$);
+   \end{tikzpicture}
+\]
+\vspace{20pt}
+Então
+\[ r_{n}(x) = x^{f_{n-1}{\scriptscriptstyle\left(\frac{1}{x}\right)}} \]
+
+
+
+\signat{lgray}{Produzido em \LaTeX}
+
+\end{document}
