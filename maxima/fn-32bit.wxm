@@ -1,12 +1,9 @@
 /* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
 /* [ Created with wxMaxima version 13.04.2 ] */
 
-/* [wxMaxima: title   start ]
-Funções Exponencial e Radical Múltipla de Ordem 𝑛
-   [wxMaxima: title   end   ] */
-
 /* [wxMaxima: comment start ]
     Arkanon <arkanon@lsd.org.br>
+    2015/09/13 (Sun) 20:40:15 (BRS)
     2015/09/13 (Sun) 00:54:55 (BRS)
     2015/09/12 (Sat) 14:22:44 (BRS)
     2015/09/12 (Sat) 04:21:21 (BRS)
@@ -14,11 +11,13 @@ Funções Exponencial e Radical Múltipla de Ordem 𝑛
     2014/03/24 (Mon) 02:58:17 (BRS)
     2014/03/23 (Sun) 13:27:40 (BRS)
 
-O 𝜋  até que é legalzinho, mas o 𝑒  é que é phoda pacaraleo. Quando menos se espera, o desgraçado dá o ar da graça.
+Apesar da fama do 𝜋, o 𝑒  é o mais ativo. Quando menos se espera, ele dá o ar da graça.
 
 http://en.wikipedia.org/wiki/tetration
 http://pt.wikipedia.org/wiki/tetração
 http://en.wikipedia.org/wiki/reuben_goodstein
+http://maxima-online.org/?inc=r-910537206
+http://euler.rene-grothmann.de/Programs/22%20-%20Maxima%20-%20More%20Details.html
 
 time (cat fn.mac | maxima -q)
    [wxMaxima: comment end   ] */
@@ -236,6 +235,7 @@ showtime:false$
 Gráficos
    [wxMaxima: section end   ] */
 
+/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 minset(lastn,funcao,intx) := block
 (
@@ -260,6 +260,7 @@ minset(lastn,funcao,intx) := block
 )$
 /* [wxMaxima: input   end   ] */
 
+/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 fnplot(record,lastn) := block
 (
@@ -272,8 +273,8 @@ fnplot(record,lastn) := block
     winy   : record[5]
   ],
 
-  minims      : minset(lastn,funcao,intx),
-  wxplot_size : [700,700],
+   minims      : minset(lastn,funcao,intx),
+/* wxplot_size : [400,400], */
 
   print(minims[1]),
   print(last(minims)),
@@ -285,8 +286,8 @@ fnplot(record,lastn) := block
     i,
     makelist(i,i,0,lastn/2),
     [
-      if x>0 then apply(funcao,[2*i+1,x]) else xisz[1],
-      if x>0 then apply(funcao,[2*i  ,x]) else xisz[2],
+      if x>0 then apply(funcao,[2*i  ,x]) else apply(funcao,[2*i  ,0]),
+      if x>0 then apply(funcao,[2*i+1,x]) else apply(funcao,[2*i+1,0]),
       [ discrete, minims ]
     ],
     winx,
@@ -295,13 +296,16 @@ fnplot(record,lastn) := block
     [ color, blue, red, black ],
     [ legend, false ],
     [ box, false ],
-    [ gnuplot_preamble, "set size ratio 1" ]
+    [ same_xy, true ],
+    [ xtics, false ],
+    [ ytics, false ]
   ),
   errormsg:false
 
 )$
 /* [wxMaxima: input   end   ] */
 
+/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 /*  f  xisz      intx(sol)       winx          winy  */
 fn:[f, [ 0, 1 ], [ 0.01,  1.0 ], [ x, 0,  1 ], [ y, 0, 1 ] ]$
@@ -310,18 +314,18 @@ rn:[r, [ 0, 0 ], [ 2.70, 15.2 ], [ x, 0, 15 ], [ y, 0, 5 ] ]$
 
 /* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
+ate : 300$ /* x64 */
+ate :  10$ /* x86 */
 showtime:true$
-                  ate : 300$ /* x64 */
-                  ate :  10$ /* x86 */
                   fnplot(fn,ate);
 showtime:false$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
+ate : 300$ /* x64 */
+ate :  10$ /* x86 */
 showtime:true$
-                  ate : 300$ /* x64 */
-                  ate :  10$ /* x86 */
                   fnplot(rn,ate)$
 showtime:false$
 /* [wxMaxima: input   end   ] */
@@ -334,26 +338,31 @@ fnsave(i, size, prefix) := block
   if (i<100) then z2 : 0 else z2 : "",
   plot2d
   (
-    [ if x>0 then f(2*i,x) else 0, if x>0 then f(2*i+1,x) else 0, [ discrete, append(min,[[0.06598803584531,0.36787944117144]]) ] ],
+    [
+      if x>0 then apply(f,[2*i  ,x]) else apply(f,[2*i  ,0]),
+      if x>0 then apply(f,[2*i+1,x]) else apply(f,[2*i+1,0]),
+      [ discrete, append(min,[[0.06598803584531,0.36787944117144]]) ]
+    ],
     [ x, 0, 1 ],
+    [ y, 0, 1 ],
     [ legend, concat("f",2*i,"(x)"), concat("f",2*i+1,"(x)"), "Min Set" ],
     [ style, [lines], [lines], [points,0.5] ],
     [ xlabel, false ],
+    [ box, true ],
+    [ same_xy, true ],
     cores,
     [ point_type, bullet ],
     [ plot_format, gnuplot ],
 
+    /* http://www.gnuplotting.org/manpage-gnuplot-4-6/#Q1-1-42 */
     [ gnuplot_preamble, "
-                         set size 1,1;
+                         set key b;
+                         set lmargin 8;
+                         set rmargin 8;
                          set style line 11 lc rgb '#808080' lt 1;
                          set border 3 ls 11;
                          set arrow from graph 1,0 to graph 1.025,0 size screen 0.025,15,60 filled ls 11;
                          set arrow from graph 0,1 to graph 0,1.025 size screen 0.025,15,60 filled ls 11;
-                         set lmargin 5;
-                         set rmargin 5;
-                         set tmargin 0;
-                         set bmargin 0;
-                         set key b;
                          set arrow from 0.06598803584531,0 to 0.06598803584531,0.36787944117144 nohead lt 0;
                          set arrow from 0.36787944117144,0 to 0.36787944117144,0.69220062755535 nohead lt 0;
                          set arrow from 0,0.36787944117144 to 0.06598803584531,0.36787944117144 nohead lt 0;
@@ -361,7 +370,7 @@ fnsave(i, size, prefix) := block
                          set tics nomirror out scale 0 textcolor rgb 'black';
                          set xtics ('0&{------}' 0, '1/𝑒^𝑒' 0.06598803584531, '1/𝑒 '                     0.36787944117144, 1);
                          set ytics (                '1/𝑒'   0.36787944117144, '^𝑒{/Symbol \\326}~𝑒{.7–}' 0.69220062755535, 1);
-                        " ], /* http://www.gnuplotting.org/manpage-gnuplot-4-6/#Q1-1-42 */
+                        " ],
 
     [ gnuplot_term,     concat( formato, " enhanced size ", size, ",", size ) ],
     [ gnuplot_out_file, concat( dir, prefix, z2, z1, i, ".", substring(formato,1,4) ) ]
@@ -370,6 +379,7 @@ fnsave(i, size, prefix) := block
 )$
 /* [wxMaxima: input   end   ] */
 
+/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 dir     : "/home/arkanon/git/fn/image/2"$
 cores   : [ color, blue, red, black ]$
@@ -379,47 +389,95 @@ n       : 10$
 min     : minset(n, f, [ 0.01,  1.0 ])$
 /* [wxMaxima: input   end   ] */
 
+/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 i:0$
-while (i<=n/2) do ( fnsave( i, 900, "/frames/frame-" ), i:i+1 )$
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-fnsave( 100, 900, "/frames/frame-" )$
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-i:0$
-while (i<=n/2) do ( fnsave( i, 300, "/thumbs/fn-thumb-" ), i:i+1 )$
+while (i<=n/2) do ( fnsave( i, 900, "/frames/frame-" ), i:i+1 );
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
-f(n,x) := block( [f:1, i:1], while (i<=n) do ( f:xi^f, i:i+1 ), if x=0 then if remainder(n,2)=0 then 1 else 0 else ev(f,xi=x) )$
+for i:50 step 50 thru 350 do fnsave( i, 900, "/frames/frame-" );
+/* [wxMaxima: input   end   ] */
 
-f(4, x);
-f(671, 0.5);
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+i:0$
+while (i<=n/2) do ( fnsave( i, 300, "/thumbs/fn-thumb-" ), i:i+1 );
+/* [wxMaxima: input   end   ] */
 
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
 wxplot_size : [400,400]$
-nlist : makelist( i, i, 0, 10)$
+wxplot_pngcairo : true$
+lastn : 10$
+nlist : makelist( i, i, 0, lastn)$
 showtime:true$
 wxplot2d
 (
-  makelist( if x>0 then apply(f,[n,x]) else  apply(f,[n,0]), n, nlist),
+  makelist( if x>0 then apply(f,[n,x]) else apply(f,[n,0]), n, nlist),
   [ x, 0, 1 ],
   [ y, 0, 1 ],
   [ color, blue, red ],
   [ legend, false ],
   [ box, false ],
+  [ same_xy, true ],
   [ xtics, false ],
   [ ytics, false ]
 )$
+showtime:false$
 /*
     64s para n=100
    221s para n=200
    524s para n=300
 */
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+dir     : "/home/arkanon/git/fn/image/2"$
+formato : "pngcairo"$
+lastn   : 370$
+nlist   : makelist( i, i, 0, lastn)$
+size    : 900$
+prefix  : concat( "/fn-", lastn )$
+
+showtime:true$
+plot2d
+(
+  makelist( if x>0 then apply(f,[n,x]) else apply(f,[n,0]), n, nlist),
+  [ x, 0, 1 ],
+  [ y, 0, 1 ],
+  [ color, blue, red ],
+  [ legend, false ],
+  [ xlabel, false ],
+  [ box, true ],
+  [ same_xy, true ],
+  [ point_type, bullet ],
+  [ plot_format, gnuplot ],
+  [ gnuplot_preamble, "
+                       set key b;
+                       set lmargin 8;
+                       set rmargin 8;
+                       set style line 11 lc rgb '#808080' lt 1;
+                       set border 3 ls 11;
+                       set arrow from graph 1,0 to graph 1.025,0 size screen 0.025,15,60 filled ls 11;
+                       set arrow from graph 0,1 to graph 0,1.025 size screen 0.025,15,60 filled ls 11;
+                       set arrow from 0.06598803584531,0 to 0.06598803584531,0.36787944117144 nohead lt 0;
+                       set arrow from 0.36787944117144,0 to 0.36787944117144,0.69220062755535 nohead lt 0;
+                       set arrow from 0,0.36787944117144 to 0.06598803584531,0.36787944117144 nohead lt 0;
+                       set arrow from 0,0.69220062755535 to 0.36787944117144,0.69220062755535 nohead lt 0;
+                       set tics nomirror out scale 0 textcolor rgb 'black';
+                       set xtics ('0&{------}' 0, '1/𝑒^𝑒' 0.06598803584531, '1/𝑒 '                     0.36787944117144, 1);
+                       set ytics (                '1/𝑒'   0.36787944117144, '^𝑒{/Symbol \\326}~𝑒{.7–}' 0.69220062755535, 1);
+                      " ],
+  [ gnuplot_term,     concat( formato, " enhanced size ", size, ",", size ) ],
+  [ gnuplot_out_file, concat( dir, prefix, ".", substring(formato,1,4) ) ]
+);
 showtime:false$
+/*
+   442s para n=300
+   546s para n=350
+*/;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: section start ]
