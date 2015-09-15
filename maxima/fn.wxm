@@ -1,5 +1,9 @@
 /* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
-/* [ Created with wxMaxima version 13.04.2 ] */
+/* [ Created with wxMaxima version 15.08.2 ] */
+
+/* [wxMaxima: title   start ]
+Função Exponencial Múltipla de Ordem n
+   [wxMaxima: title   end   ] */
 
 /* [wxMaxima: comment start ]
     Arkanon <arkanon@lsd.org.br>
@@ -26,8 +30,6 @@ time (cat fn.mac | maxima -q)
 𝑓ₙ(𝑥) – 𝑛 ∊ ℕ, 𝑥 ∊(0,1] ⊂ ℝ
    [wxMaxima: section end   ] */
 
-/* [wxMaxima: fold    start ] */
-
 /* [wxMaxima: input   start ] */
 f(n,x) := block
 (
@@ -47,13 +49,9 @@ f(n,x) := block
 df(n,x) := diff(f(n,x),x)$
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: fold    end   ] */
-
 /* [wxMaxima: section start ]
 𝑟ₙ(𝑥) – 𝑛 ∊ ℕ, 𝑥 >0 ∊ ℝ
    [wxMaxima: section end   ] */
-
-/* [wxMaxima: fold    start ] */
 
 /* [wxMaxima: input   start ] */
 r(n,x) := block
@@ -75,13 +73,9 @@ r(n,x) := block
 dr(n,x) := diff(r(n,x),x)$
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: fold    end   ] */
-
 /* [wxMaxima: section start ]
 Mínimos e Máximos
    [wxMaxima: section end   ] */
-
-/* [wxMaxima: fold    start ] */
 
 /* [wxMaxima: comment start ]
 𝑒^+𝑒          15.15426224147926  ♦   𝑟       𝑟∞𝑥
@@ -92,13 +86,9 @@ Mínimos e Máximos
 𝑒^-𝑒            0.06598803584531  ♦    𝑓       𝑓∞𝑥
    [wxMaxima: comment end   ] */
 
-/* [wxMaxima: fold    end   ] */
-
 /* [wxMaxima: section start ]
 Testes
    [wxMaxima: section end   ] */
-
-/* [wxMaxima: fold    start ] */
 
 /* [wxMaxima: input   start ] */
  n:4$
@@ -167,7 +157,9 @@ r( 40,2.0);
 r(336,2.0);
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: fold    end   ] */
+/* [wxMaxima: input   start ] */
+kill(all);
+/* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: section start ]
 lim 𝑛➛ min 𝑓₂ₙ(𝑥)
@@ -190,8 +182,8 @@ lim 𝑛➛ min 𝑓₂ₙ(𝑥)
    [wxMaxima: comment end   ] */
 
 /* [wxMaxima: input   start ] */
- n : 336$ /* x64 */ 
- n :   2$ /* x86 */
+  n : 336$ /* x64 */ 
+/*n :   2$ /* x86 */
 showtime:true$
 xm : find_root(df(n,x),x,.065,1.072);
 ym : f(n,xm);
@@ -221,8 +213,8 @@ lim 𝑛➛ max 𝑟₂ₙ(𝑥)
    [wxMaxima: comment end   ] */
 
 /* [wxMaxima: input   start ] */
- n : 334$ /* x64 */ 
- n :   2$ /* x86 */
+  n : 334$ /* x64 */
+/*n :   2$ /* x86 */
 showtime:true$
 xm : find_root(dr(n,x),x,14.0,15.2);
 ym : r(n,xm);
@@ -235,7 +227,6 @@ showtime:false$
 Gráficos
    [wxMaxima: section end   ] */
 
-/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 minset(lastn,funcao,intx) := block
 (
@@ -260,7 +251,6 @@ minset(lastn,funcao,intx) := block
 )$
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 fnplot(record,lastn) := block
 (
@@ -292,7 +282,8 @@ fnplot(record,lastn) := block
     ],
     winx,
     winy,
-    [ style, lines, lines, dots ],
+    [ style, [lines], [lines], [points,0.5] ],
+    [ point_type, bullet ],
     [ color, blue, red, black ],
     [ legend, false ],
     [ box, false ],
@@ -305,14 +296,12 @@ fnplot(record,lastn) := block
 )$
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 /*  f  xisz      intx(sol)       winx          winy  */
 fn:[f, [ 0, 1 ], [ 0.01,  1.0 ], [ x, 0,  1 ], [ y, 0, 1 ] ]$
 rn:[r, [ 0, 0 ], [ 2.70, 15.2 ], [ x, 0, 15 ], [ y, 0, 5 ] ]$
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 ate : 300$ /* x64 */
 ate :  10$ /* x86 */
@@ -321,7 +310,6 @@ showtime:true$
 showtime:false$
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 ate : 300$ /* x64 */
 ate :  10$ /* x86 */
@@ -330,7 +318,6 @@ showtime:true$
 showtime:false$
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 fnsave(i, size, prefix) := block
 (
@@ -347,11 +334,11 @@ fnsave(i, size, prefix) := block
     [ y, 0, 1 ],
     [ legend, concat("f",2*i,"(x)"), concat("f",2*i+1,"(x)"), "Min Set" ],
     [ style, [lines], [lines], [points,0.5] ],
+    [ point_type, bullet ],
     [ xlabel, false ],
     [ box, true ],
     [ same_xy, true ],
     cores,
-    [ point_type, bullet ],
     [ plot_format, gnuplot ],
 
     /* http://www.gnuplotting.org/manpage-gnuplot-4-6/#Q1-1-42 */
@@ -379,9 +366,31 @@ fnsave(i, size, prefix) := block
 )$
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
-dir     : "/home/arkanon/git/fn/image/2"$
+:lisp ( defun $getenv (string) ( si:getenv string ) );
+sys(command) := block
+(
+  [lines:[]],
+  file : "/tmp/out",
+  system(concat(command, " > ", file)),
+  out : openr(file),
+  while stringp( line : readline(out) ) do lines : append(lines, [line]),
+  close(out),
+  lines
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+HOME : getenv("HOME")$
+arch : sys("uname -p")$
+ls   : sys(concat("ls -1 ",HOME,"/"))$
+HOME;
+arch;
+ls;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+dir     : concat( HOME, "/git/fn/image/2" );
 cores   : [ color, blue, red, black ]$
 formato : "svg"$
 formato : "pngcairo"$
@@ -389,30 +398,27 @@ n       : 10$
 min     : minset(n, f, [ 0.01,  1.0 ])$
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 i:0$
 while (i<=n/2) do ( fnsave( i, 900, "/frames/frame-" ), i:i+1 );
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 for i:50 step 50 thru 350 do fnsave( i, 900, "/frames/frame-" );
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 i:0$
 while (i<=n/2) do ( fnsave( i, 300, "/thumbs/fn-thumb-" ), i:i+1 );
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 wxplot_size : [400,400]$
 wxplot_pngcairo : true$
+
 lastn : 10$
 nlist : makelist( i, i, 0, lastn)$
-showtime:true$
+showtime:false$
 wxplot2d
 (
   makelist( if x>0 then apply(f,[n,x]) else apply(f,[n,0]), n, nlist),
@@ -430,11 +436,65 @@ showtime:false$
     64s para n=100
    221s para n=200
    524s para n=300
-*/
+*/;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-dir     : "/home/arkanon/git/fn/image/2"$
+f(n,x) := block
+(
+  [
+    f : 1,
+    i : 1
+  ],
+  while (i<=n) do
+  (
+    f : xi^f,
+    i : i+1
+  ),
+  if x=0 then if remainder(n,2)=0 then 1 else 0 else ev(f,xi=x)
+)$
+
+wxplot_size     : [400,400]$
+wxplot_pngcairo : false$
+fnlist : makelist( f(n,x), n, 0, 10 );
+wxdraw2d( fnlist )$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/*
+   http://maxima-online.org/tags/index/["append","apply","draw","draw2d","explicit","load","makelist"]
+   http://mcs.une.edu.au/doc/wxmaxima/wxmaxima_2.html
+*/
+
+a        :  1;
+b        :  2;
+x(i,n)   := a+i*((b-a)/n);
+rects(n) := makelist( rectangle( [ x(k-1,n), 0 ], [ x(k,n), 1/x(k,n) ] ), k, 1, n );
+
+/*
+wxdraw2d( explicit( 1/x, x, -1, 1 ) );
+*/
+
+wxdraw2d( rects(20) );
+wxgr(n)  := apply( wxdraw2d, append( [ xrange=[ a-(b-a)/4, b+(b-a)/4 ], color=blue ], rects(n), [ transparent=true, explicit( 1/x, x, a-(b-a)/4, b+(b-a)/4 ) ] ) );
+wxgr(20);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+chaosgame([[0, 0], [1, 0], [0.5, sqrt(3)/2]], [0.1, 0.1], 1/2, 300, [style, dots]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+table_form(
+    [
+        [1,2],
+        [3,4]
+    ]
+)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+dir     : concat( HOME, "/git/fn/image/2" )$
 formato : "pngcairo"$
 lastn   : 370$
 nlist   : makelist( i, i, 0, lastn)$
