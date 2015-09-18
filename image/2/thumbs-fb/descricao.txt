@@ -1,0 +1,7 @@
+
+ƒₙ(𝑥) - Função Exponencial Múltipla de Ordem 𝑛
+
+Gráfico entre 0 e 1 da convergência da função de tetração: "x elevado na x elevado na x elevado na x...", n vezes.
+
+Feito no wxMaxima, renderizado pelo GnuPlot, animado em gif pelo convert do ImageMagick em shell script e encapsulado como jpg (para enganar o Facebook) pelo site TinyPic :-p
+
