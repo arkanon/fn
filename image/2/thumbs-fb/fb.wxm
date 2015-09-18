@@ -7,7 +7,7 @@
 
 /* [wxMaxima: comment start ]
     Arkanon <arkanon@lsd.org.br>
-    2015/09/17 (Thu) 22:00:50 (BRS)
+    2015/09/17 (Thu) 23:57:57 (BRS)
    [wxMaxima: comment end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -36,7 +36,6 @@ formato : "pngcairo"$
 wxplot_pngcairo : true$
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 f(n,x) := block
 (
@@ -54,7 +53,6 @@ f(n,x) := block
 )$
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 minset(lastn,funcao,intx) := block
 (
@@ -79,7 +77,6 @@ while (i<=lastn) do
 )$
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 fnsave(i, size, margin, psize, _prefix) := block
 (
@@ -107,28 +104,29 @@ fnsave(i, size, margin, psize, _prefix) := block
     /* http://www.gnuplotting.org/manpage-gnuplot-4-6/#Q1-1-42 */
     [ gnuplot_preamble,
       sconcat("
-              set label font ',14'            at graph 0.0,1.22   center 'ƒₙ﹙𝑥﹚';
-              set label font ',11'            at graph 0.6,1.23   center 'Função Exponencial Múltipla';
-              set label font ',11'            at graph 0.6,1.15   center 'de Ordem 𝑛 (aka Tetração)';
-              set label font 'Times Italic,9' at graph 1.13,-0.15 right  'Arkanon' tc rgb '#808080';
-              set key b;
+              set label font ',13'             at graph  0.01 ,  1.150 center tc rgb '#808080' 'ƒₙ﹙𝑥﹚';
+              set label font ',13'             at graph  1.13 ,  0.005 center tc rgb '#808080' '𝑥';
+              set label font ',11'             at graph  0.60 ,  1.160 center                  'Função Exponencial Múltipla de Ordem 𝑛';
+              set label font ',9'              at graph  0.60 ,  1.100 center                  '(a.k.a Tetração)';
+              set label font 'Times Italic,10' at graph  1.19 , -0.120 right  tc rgb '#808080' 'Arkanon';
+              set key left at graph 0.90,0.14 Left samplen -1 tc variable;
               set tmargin ",margin[1],";
               set rmargin ",margin[2],";
               set bmargin ",margin[3],";
               set lmargin ",margin[4],";
               set style line 11 lc rgb '#808080' lt 1;
               set border 3 ls 11;
-              set arrow from graph 1,0 to graph 1.085,0 size screen 0.025,25,30 filled ls 11;
-              set arrow from graph 0,1 to graph 0,1.085 size screen 0.025,25,30 filled ls 11;
-              set arrow from 0,1                to 1,1                               nohead lt 0;
-              set arrow from 1,0                to 1,1                               nohead lt 0;
-              set arrow from 0.06598803584531,0 to 0.06598803584531,0.36787944117144 nohead lt 0;
-              set arrow from 0.36787944117144,0 to 0.36787944117144,0.69220062755535 nohead lt 0;
-              set arrow from 0,0.36787944117144 to 0.06598803584531,0.36787944117144 nohead lt 0;
-              set arrow from 0,0.69220062755535 to 0.36787944117144,0.69220062755535 nohead lt 0;
+              set arrow from graph 1               ,0                to graph 1.085           ,0.000            size screen 0.015,25,50 filled ls 11;
+              set arrow from graph 0               ,1                to graph 0.000           ,1.085            size screen 0.015,25,50 filled ls 11;
+              set arrow from       0               ,1                to       1               ,1                                        nohead lt 0;
+              set arrow from       1               ,0                to       1               ,1                                        nohead lt 0;
+              set arrow from       0.06598803584531,0                to       0.06598803584531,0.36787944117144                         nohead lt 0;
+              set arrow from       0.36787944117144,0                to       0.36787944117144,0.69220062755535                         nohead lt 0;
+              set arrow from       0               ,0.36787944117144 to       0.06598803584531,0.36787944117144                         nohead lt 0;
+              set arrow from       0               ,0.69220062755535 to       0.36787944117144,0.69220062755535                         nohead lt 0;
               set tics nomirror out scale 0 tc rgb  'black';
-              set xtics offset graph 0.00,0.04 font ',9' ( '0&{------}' 0, '1/𝑒^𝑒' 0.06598803584531, '1/𝑒 ^ ' 0.36787944117144, '1^ ' 1 );
-              set ytics offset graph 0.03,0.03 font ',9' ( '1/𝑒~ {.7 }' 0.36787944117144, '^𝑒{/Symbol \\326}~𝑒{.7–}&{--}' 0.69220062755535, '1~ {.7 }' 1 );
+              set xtics offset graph 0.00 , 0.02 font ',9' ( '0^ &{------}' 0, '1/𝑒^𝑒' 0.06598803584531, '1/𝑒 ^ ' 0.36787944117144, '1^ ' 1 );
+              set ytics offset graph 0.02 , 0.02 font ',9' ( '1/𝑒~ {.7 }' 0.36787944117144, '^𝑒{/Symbol \\326}~𝑒{.7–}&{--}' 0.69220062755535, '1~ {.7 }' 1 );
 ") ],
 
     [ gnuplot_term,     concat( formato, " enhanced size ", size[1], ",", size[2] ) ],
@@ -139,15 +137,15 @@ fnsave(i, size, margin, psize, _prefix) := block
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-n   : 50$ /* 300 - 137.12s */
+n   : 120$ /* 300 - 137.12s */
 min : minset(n, f, [ 0.01,  1.0 ])$
 display(time(%))$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-n : 50$ /* 300 - 80.40s */
+n : 120$ /* 300 - 80.40s */
 i :  0$
-while (i<=n/2) do ( fnsave( i, [351,351], [4,3.5,2.5,3.5], 0, prefix ), i:i+1 )$
+while (i<=n/2) do ( fnsave( i, [470,470], [4,4,3,2], 0, prefix ), i:i+1 )$
 display(time(%))$
 /* [wxMaxima: input   end   ] */
 
