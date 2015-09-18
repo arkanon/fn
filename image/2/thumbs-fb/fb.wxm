@@ -7,7 +7,7 @@
 
 /* [wxMaxima: comment start ]
     Arkanon <arkanon@lsd.org.br>
-    2015/09/17 (Thu) 23:57:57 (BRS)
+    2015/09/18 (Thu) 02:16:28 (BRS)
    [wxMaxima: comment end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -36,6 +36,7 @@ formato : "pngcairo"$
 wxplot_pngcairo : true$
 /* [wxMaxima: input   end   ] */
 
+/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 f(n,x) := block
 (
@@ -53,6 +54,7 @@ f(n,x) := block
 )$
 /* [wxMaxima: input   end   ] */
 
+/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 minset(lastn,funcao,intx) := block
 (
@@ -77,6 +79,7 @@ while (i<=lastn) do
 )$
 /* [wxMaxima: input   end   ] */
 
+/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 fnsave(i, size, margin, psize, _prefix) := block
 (
@@ -137,21 +140,21 @@ fnsave(i, size, margin, psize, _prefix) := block
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-n   : 120$ /* 300 - 137.12s */
+n   : 300$ /* 300 - 137.12s na sp, 2159.38s no positivo */
 min : minset(n, f, [ 0.01,  1.0 ])$
 display(time(%))$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-n : 120$ /* 300 - 80.40s */
-i :  0$
+n : 300$ /* 300 - 80.40s na sp, 497.48s no positivo */
+i :   0$
 while (i<=n/2) do ( fnsave( i, [470,470], [4,4,3,2], 0, prefix ), i:i+1 )$
 display(time(%))$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-sys( concat( git, "/anim.sh ", prefix ) )$ /* 300 - 25.11s */
-display(time(%))$
+/* 300 - 25.11s na sp, 4m21.219s no positivo */
+sys( concat( "time (TIMEFORMAT=%lR ", git, "/anim.sh ", prefix, ") 2>&1" ) );
 /* [wxMaxima: input   end   ] */
 
 /* Maxima can't load/batch files which end with a comment! */

@@ -1,7 +1,7 @@
 Função Exponencial Múltipla
 ===========================
 
-Gráficos da Função Exponencial Múltipla de Ordem 𝑛 – 𝑓ₙ(𝑥) – para 𝑛∊[0,401]⊂ℕ e 𝑥∊[0,1]⊂ℝ
+Análise da (por mim nomeada) Função Exponencial Múltipla de Ordem 𝑛 – 𝑓ₙ(𝑥) – para 𝑛∊[0,401]⊂ℕ e 𝑥∊[0,1]⊂ℝ, conhecida oficialmente por Função de [Tetração](http://pt.wikipedia.org/wiki/Tetração)
 
 --
 
@@ -26,22 +26,24 @@ Mas e a função x na x na x? Se o limite dela em 0 é 0 e em 1 ela vale 1, dife
 Ela ficaria abaixo da barriga de x na x, ou a ultrapassaria em algum momento, nesse intervalo de x entre 0 e 1?
 
 E x na x na x na x (4 vezes)? Tende a y=1, em x=0. Ela aumentaria a barriga de x na x (2 vezes), ou diminuiria? Em outras palavras: x na x na x na x fica acima ou abaixo de x na x?
-E a funcção com 5 x's?
+E a função com 5 x's?
 E a com 6?
 
 Isso tudo eu ia pensando enquando desmontava, limpava e remontava o fuzil, totalmente alheiro a zona a mina volta... :-p
 
 De repente um raio abriu minha cabeça: números (positivos) menores que 1 elevados a um expoente maior que 1 resultam em um número menor eles mesmos:
 
+```
 x<1 -> x=1/n, n>1
-
                    ___
  x    /1\1/n   n  | 1       1
 x  = | - |   =  \ | -  = n ---
       \n/        \| n     \|n
+```
 
 Se n>1, a raiz n-ésima de n é menor que n, portanto, o inverso dela é maior que o inverso de n.
 Mas o inverso de n é x, então x^x>x, para x<1
 
 MAS, elevados a um expoente MENOR que 1, resultam em um número MAIOR que eles mesmos.
 
+(continua...)
