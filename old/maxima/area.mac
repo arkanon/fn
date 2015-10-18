@@ -1,0 +1,72 @@
+
+/*
+     time ( cat area.mac | maxima -q )
+*/
+
+
+
+f(n,x) := block
+(
+  if x=0 then if remainder(n,2)=0 then fn:1 else fn:0,
+  y:1,
+  for i:1 thru n do y : x^y,
+  fn:y
+)$
+
+Sf(n) := bfloat(quad_qags( f(n,x), x, 0, 1, epsrel=1d-13 ))[1]$
+
+sys(command) := block
+(
+  [lines:[]],
+  file : "/tmp/out",
+  system( concat( "( ", command, " ) >| ", file)),
+  out : openr(file),
+  while stringp( line : readline(out) ) do lines : append(lines, [line]),
+  close(out),
+  system( concat("rm -f ", file) ),
+  lines
+)$
+
+
+
+cnu : [ n , "tₙ" , "tₙ₊₁" , "∫ ƒₙ" , "∫ ƒₙ₊₁" , "1 - ∫ ƒₙ" , "∫ ƒₙ - ∫ ƒₙ₊₁" ]$
+cna : [ n , "tn" , "tn+1" , "Sƒn" , "Sƒn+1" , "1 - Sƒn" , "Sƒn - Sƒn+1" ]$
+
+ HOME   : sys("echo $HOME")[1]$
+ dir    : concat( HOME, "/git/fn" )$
+ fpprec : 10000$
+?fpprec : 10000$
+ offset : 0$
+ size   : 10000$
+
+
+
+file_search_maxima : cons(sconcat(dir,"/maxima/nint/###.{lisp,mac,mc}"), file_search_maxima)$
+(load(nint),load(apnint))$
+
+
+
+out : openw( concat( dir, "/fn-area-", offset, "-", offset+size, ".txt" ) )$
+
+printf( out, "~3a  ~{~5a  ~}~{~34a  ~}~%", cna[1] , [ cna[2] , cna[3] ] , rest(cna,3) )$
+
+t : []$
+display(timedate())$
+for n:offset thru offset+size step 2 do
+(
+  t0  : elapsed_real_time(),
+  sn  : Sf(n),
+  t1  : elapsed_real_time(),
+  sn1 : Sf(n+1),
+  t2  : elapsed_real_time(),
+  l   : split( printf( false, "~{~5,2,,,,0h ~}~{~,31h ~}" , [ t1-t0 , t2-t1 ] , [ sn , sn1 , 1-sn , sn-sn1 ] ) ),
+  t   : append( t, [ append( [n] , l ) ] ),
+  printf( out, "~3d  ~{~a  ~}~%", n, l )
+)$
+display(time(%))$
+
+close(out)$
+
+
+
+/* EOF */

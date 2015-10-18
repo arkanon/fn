@@ -1,49 +1,49 @@
-Função Exponencial Múltipla
-===========================
 
-Análise da (por mim nomeada) Função Exponencial Múltipla de Ordem 𝑛 – 𝑓ₙ(𝑥) – para 𝑛∊[0,401]⊂ℕ e 𝑥∊[0,1]⊂ℝ, conhecida oficialmente por Função de [Tetração](http://pt.wikipedia.org/wiki/Tetração)
+# Arkanon <arkanon@lsd.org.br>
+# 2015/10/18 (Sun) 02:32:12 BRT
+# 2015/10/13 (Tue) 02:36:31 BRS
+# 2015/09/17 (Thu) 21:00:00 BRS
+# 2015/09/17 (Thu) 15:13:43 BRS
+# 2015/09/17 (Thu) 06:53:01 BRS
+# 2015/09/13 (Sun) 20:40:15 BRS
+# 2015/09/13 (Sun) 00:54:55 BRS
+# 2015/09/12 (Sat) 14:22:44 BRS
+# 2015/09/12 (Sat) 04:21:21 BRS
+# 2015/09/11 (Fri) 22:26:12 BRS
+# 2014/03/24 (Mon) 02:58:17 BRS
+# 2014/03/23 (Sun) 13:27:40 BRS
 
---
+- wxMaxima   15.04.0-1build1             dpkg -s wxMaxima | grep Version
+- wxWidgets   3.0.2+dfsg-1.2             dpkg -s $(apt-cache search libwxbase$(ldd $(which wxmaxima) | sed -rn '/libwx_baseu-/s/\t[^0-9]+([0-9.]+).so.([0-9.]+).+/\1-\2/p') | grep -v dbg | cut -d\  -f1) | grep Version
+- Maxima      5.36.1                     maxima --version
+- GCL         2.6.12-14                  dpkg -s gcl | grep Version
+- GnuPlot     5.0.1                      gnuplot --version | sed 's/ patchlevel /./'
+- LUbuntu    15.10                       grep -w VERSION /etc/os-release
+- Linux       4.2.0-16-generic #19 SMP   uname -srv
+- Intel Core  Duo T2450 2.00GHz 32-bit   (spiderman)   LC_MESSAGES=C lscpu | grep -e op-mode -e name
+- Intel Core2 Duo T6570 2.10GHz 64-bit   (venom)
 
-Em 1993, na época em que cursava Matemática na UFRGS e prestava o serviço militar no CPOR de Porto Alegre, comecei um belo dia a pensar na função y=xˣ. Fiz isso durante uma das limpezas no fuzil, no quartel :-p
+- (http://en.wikipedia.org/wiki/tetration)
+- (http://pt.wikipedia.org/wiki/tetração)
+- (http://en.wikipedia.org/wiki/reuben_goodstein)
+- (http://en.wikipedia.org/wiki/Lambert_W_function)
 
-Não tem como olhar para xˣ e não pensar na extrapolação
-x elevado na x elevado na x elevado na x elevado na x...
-n vezes.
+- (http://maxima-online.org/?inc=r-910537206)
 
-Enquanto desmontava e montava o FAL, fui mentalmente avaliando o provável comportamento da função.
-Evidentemente para x>1 ela cresce estupidamente rápido, não tem nem porque perder muito tempo ali.
-Para x<1, temos raízes de números negativos, ou seja, a coisa descamba para o conjunto dos números complexos.
-Não, se houvesse algo interessante na função, finito e pertencente aos reais, provavelmente seria entre 0 e 1, pelo menos para um cara pé no chão como eu :-p
+- (http://brilliant.org/problems/numerical-integration-of-exponential-tetration/)
+- (http://euler.rene-grothmann.de/Programs/22%20-%20Maxima%20-%20More%20Details.html)
+- (http://go.helms-net.de/math/tetdocs/)
+- (http://math.eretrandre.org/tetrationforum/)
+- (http://mathworld.wolfram.com/PowerTower.html)
+- (http://mathworld.wolfram.com/SophomoresDream.html)
+- (http://mizugadro.mydns.jp/t/index.php/Tetration)
+- (http://rosettacode.org/wiki/Numerical_integration/Gauss-Legendre_Quadrature#Maxima)
+- (http://self.gutenberg.org/articles/euler's_infinite_tetration_theorem)
 
-Em x=0 a função não tem valor definido: se temos x elevado na x (2 vezes o x), ele tende a y=1. Se temos x elevado na x elevado na x (3 vezes o x), ela tende a y=0.
-Isso foi fácil de "ver" na época, hoje não lembro mais suficientemente das aulas de cálculo para fazê-lo mentalmente :-p.
+- (http://math.stackexchange.com/questions/108288/infinite-tetration-convergence-radius)
+- (http://math.stackexchange.com/questions/1438567/questions-concerning-the-integration-of-integer-tetration)
+- (http://math.stackexchange.com/questions/1438643/how-to-calculate-generalized-puiseux-series)
+- (http://math.stackexchange.com/questions/205925/definite-integral-of-tetration-between-0-and-1)
+- (http://math.stackexchange.com/questions/87870/are-the-solutions-of-xxxx-cdot-cdot-cdot-2-correct)
 
-Em x=1, ela vale y=1, não importa quantas vezes x seja elevado na x.
-
-E entre 0 e 1? Eu já tinha visto o gráfico de xˣ uma vez, acho que no livro de Cálculo. Tinha uma "barriga" para baixo, nessa região.
-Mas e a função x na x na x? Se o limite dela em 0 é 0 e em 1 ela vale 1, diferentemente da x na x, ela precisaria obrigatoriamente subir, possivelmente por um caminho monótono (sem descer nunca).
-Ela ficaria abaixo da barriga de x na x, ou a ultrapassaria em algum momento, nesse intervalo de x entre 0 e 1?
-
-E x na x na x na x (4 vezes)? Tende a y=1, em x=0. Ela aumentaria a barriga de x na x (2 vezes), ou diminuiria? Em outras palavras: x na x na x na x fica acima ou abaixo de x na x?
-E a função com 5 x's?
-E a com 6?
-
-Isso tudo eu ia pensando enquando desmontava, limpava e remontava o fuzil, totalmente alheiro a zona a mina volta... :-p
-
-De repente um raio abriu minha cabeça: números (positivos) menores que 1 elevados a um expoente maior que 1 resultam em um número menor eles mesmos:
-
-```
-x<1 -> x=1/n, n>1
-                   ___
- x    /1\1/n   n  | 1       1
-x  = | - |   =  \ | -  = n ---
-      \n/        \| n     \|n
-```
-
-Se n>1, a raiz n-ésima de n é menor que n, portanto, o inverso dela é maior que o inverso de n.
-Mas o inverso de n é x, então x^x>x, para x<1
-
-MAS, elevados a um expoente MENOR que 1, resultam em um número MAIOR que eles mesmos.
-
-(continua...)
+# EOF
