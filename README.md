@@ -1,5 +1,3 @@
-<small>
-
 	# Arkanon <arkanon@lsd.org.br>
 	# 2015/10/18 (Sun) 02:32:12 BRT
 	# 2015/10/13 (Tue) 02:36:31 BRS
@@ -48,5 +46,3 @@
 	http://math.stackexchange.com/questions/87870/are-the-solutions-of-xxxx-cdot-cdot-cdot-2-correct
 
 	# EOF
-	
-</small>
