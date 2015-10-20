@@ -39,10 +39,10 @@
 - (http://rosettacode.org/wiki/Numerical_integration/Gauss-Legendre_Quadrature#Maxima)
 - (http://self.gutenberg.org/articles/euler's_infinite_tetration_theorem)
 
-	- (http://math.stackexchange.com/questions/108288/infinite-tetration-convergence-radius)
-	- (http://math.stackexchange.com/questions/1438567/questions-concerning-the-integration-of-integer-tetration)
-	- (http://math.stackexchange.com/questions/1438643/how-to-calculate-generalized-puiseux-series)
-	- (http://math.stackexchange.com/questions/205925/definite-integral-of-tetration-between-0-and-1)
-	- (http://math.stackexchange.com/questions/87870/are-the-solutions-of-xxxx-cdot-cdot-cdot-2-correct)
+	http://math.stackexchange.com/questions/108288/infinite-tetration-convergence-radius
+	http://math.stackexchange.com/questions/1438567/questions-concerning-the-integration-of-integer-tetration
+	http://math.stackexchange.com/questions/1438643/how-to-calculate-generalized-puiseux-series
+	http://math.stackexchange.com/questions/205925/definite-integral-of-tetration-between-0-and-1
+	http://math.stackexchange.com/questions/87870/are-the-solutions-of-xxxx-cdot-cdot-cdot-2-correct
 
 	# EOF
