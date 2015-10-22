@@ -1,0 +1,11 @@
+
+Taí meu primeiro gif animado pro FB (y)
+
+ƒₙ(𝑥) - Função Exponencial Múltipla de Ordem 𝑛
+
+Gráfico da convergência no intervalo (0,1] da função de tetração: "x elevado na x elevado na x elevado na x...", n vezes.
+
+Desenvolvido no wxMaxima com renderização pelo GnuPlot, animação em gif pelo convert do ImageMagick em shell script e encapsulação como jpg (para enganar o Facebook) pelo site TinyPic :-p
+
+"Descobri" e comecei a estudar essa função 22 anos atrás, mas deixei-a abandonada por mais de 15. Agora, o histórico está sendo escrito e armazenado no GitHub.
+
