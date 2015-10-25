@@ -1,0 +1,104 @@
+
+
+
+load(draw)$
+
+
+
+sys(command) := block
+(
+  [lines:[]],
+  file : "/tmp/out",
+  system( concat( "bash -c 'time ( TIMEFORMAT=%lR ", command, " ) >| ", file, " 2>&1'" ) ),
+  out : openr(file),
+  while stringp( line : readline(out) ) do lines : append(lines, [line]),
+  close(out),
+  system( concat("rm -f ", file) ),
+  lines
+)$
+
+
+
+super           :  [ "⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹" ];
+subsc           :  [ "₀", "₁", "₂", "₃", "₄", "₅", "₆", "₇", "₈", "₉" ];
+subscdg(i)      := subsc[eval_string(i)+1]$
+tosubsc(number) := simplode(map(subscdg,charlist(concat(number))))$
+
+lpad(number, digits, character) := concat( smake( digits - slength(string(number)), character ), number )$
+
+HOME : sys("echo $HOME")[1]$
+OS   : sys("uname -m | grep -wqo x86_64 && echo x64 || echo x86")[1]$
+CPU  : sys("grep -wqo lm /proc/cpuinfo  && echo x64 || echo x86")[1]$
+
+wxplot_pngcairo : true$
+
+
+
+f(n,x) := block
+(
+  [ y:1, i:1 ],
+  if x=0 then if remainder(n,2)=0 then 1 else 0 else
+  (
+    for i:1 thru n do y : x^y,
+    y
+  )
+)$
+
+d1f(n,x) := diff(  f(n,x),x)$
+d2f(n,x) := diff(d1f(n,x),x)$
+
+
+
+r(n,x) := block
+(
+  [ y:1, i:1 ],
+  if n=0 then 1 else if x=0 then 0 else
+  (
+    for i:1 thru n do y : x^(1/y),
+    y
+  )
+)$
+
+d1r(n,x) := diff(  r(n,x),x)$
+d2r(n,x) := diff(d1r(n,x),x)$
+
+
+
+l(x) := -lambert_w( -log(x) ) / log(x)$ /* função limite de ƒₙ(𝑥). W(x)=y | y𝑒ʸ = x função W de Lambert */
+
+
+
+minim(funcao,n,intx) := block
+(
+  [
+    xm : 0,
+    ym : 0,
+    fi,
+    di
+  ],
+  fi : apply(funcao,[i,x]),
+  di : diff(fi,x),
+  xm : find_root(di,x,intx[1],intx[2]),
+  ym : ev(fi,x=xm),
+  [xm, ym]
+)$
+
+
+
+minset(funcao,lastn,intx) := block
+(
+  [
+    i   : 2,
+    set : []
+  ],
+  while (i<=lastn) do
+  (
+    set : append(set,[minim(funcao,lastn,intx)]),
+    i   : i+2
+  ),
+  set
+)$
+
+
+
+/* EOF */
