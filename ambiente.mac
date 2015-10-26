@@ -64,7 +64,7 @@ d2r(n,x) := diff(d1r(n,x),x)$
 
 
 
-l(x) := -lambert_w( -log(x) ) / log(x)$ /* função limite de ƒₙ(𝑥). W(x)=y | y𝑒ʸ = x função W de Lambert */
+l(x) := -lambert_w( -log(x) ) / log(x)$ /* função limite de ƒₙ(𝑥). 𝑊 (𝑥) = 𝑦 | 𝑦𝑒ʸ = 𝑥 função 𝑊 de Lambert */
 
 
 
