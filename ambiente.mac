@@ -1,3 +1,11 @@
+/*
+
+  ambiente.mac
+
+  Arkanon <arkanon@lsd.org.br>
+  2015/11/01 (Sun) 03:02:19 BRST
+
+*/
 
 
 
@@ -64,9 +72,8 @@ d2r(n,x) := diff(d1r(n,x),x)$
 
 
 
-l(x) := -lambert_w( -log(x) ) / log(x)$ /* função limite de ƒₙ(𝑥). 𝑊 (𝑥) = 𝑦 | 𝑦𝑒ʸ = 𝑥 função 𝑊 de Lambert */
-
-
+l(x) := -lambert_w( -log(x) ) / log(x)$ /*  ℓ(𝑥) = - 𝑊 (-𝑙𝑛 𝑥) / 𝑙𝑛 𝑥  função limite de ƒₙ(𝑥) */
+                                        /* 𝑊 (𝑥) = 𝑦 | 𝑦𝑒ʸ = 𝑥         função 𝑊 de Lambert    */
 
 minim(funcao,n,intx) := block
 (
@@ -97,6 +104,42 @@ minset(funcao,lastn,intx) := block
     i   : i+2
   ),
   set
+)$
+
+
+
+/* http://addictuscapulus.blogspot.com.br/2010/07/maxima-function-for-rounding-off.html */
+roundoff(roundoff_base, roundoff_place) :=
+  if ( roundoff_place < 0 )
+  then
+    bfloat( roundoff_base )
+  else
+    bfloat(
+           floor( roundoff_base*10^roundoff_place ) + (
+                                                        if ( mod( roundoff_base*10*10^roundoff_place, 10 ) >= 5 ) /* 4.999999999985448 */
+                                                        then 1
+                                                        else 0
+                                                      )
+         ) / 10^roundoff_place
+$
+
+
+
+sf2dhmsf(t) := block
+(
+  [ f, s, m, h, d ],
+  t : t[1],
+  f : eval_string(printf(false,"~h",roundoff(t-fix(t),2))),
+  t : fix(t),
+  s : mod(t,60),
+  z : if (s<10) then "0" else "",
+  t : quotient(t,60),
+  m : lpad(mod(t,60),2,"0"),
+  t : quotient(t,60),
+  h : lpad(mod(t,60),2,"0"),
+  t : quotient(t,60),
+  d : mod(t,60),
+  sconcat(d," ",h,":",m,":",z,s+f)
 )$
 
 
