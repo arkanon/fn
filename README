@@ -1,6 +1,7 @@
 # vim: ft=sh
 
 # Arkanon <arkanon@lsd.org.br>
+# 2015/11/07 (Sat) 09:46:59 BRST
 # 2015/10/20 (Tue) 01:07:51 BRD
 # 2015/10/18 (Sun) 02:32:12 BRT
 # 2015/10/13 (Tue) 02:36:31 BRS
@@ -64,6 +65,7 @@
 # http://mizugadro.mydns.jp/t/index.php/Tetration
 # http://rosettacode.org/wiki/Numerical_integration/Gauss-Legendre_Quadrature#Maxima
 # http://self.gutenberg.org/articles/euler's_infinite_tetration_theorem
+# https://proofwiki.org/wiki/Definition:Tetration
 
 # http://math.stackexchange.com/questions/108288/infinite-tetration-convergence-radius
 # http://math.stackexchange.com/questions/1438567/questions-concerning-the-integration-of-integer-tetration
