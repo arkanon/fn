@@ -1,6 +1,7 @@
 # vim: ft=sh
 
 # Arkanon <arkanon@lsd.org.br>
+# 2015/11/12 (Thu) 00:01:56 BRST
 # 2015/11/07 (Sat) 09:46:59 BRST
 # 2015/10/20 (Tue) 01:07:51 BRD
 # 2015/10/18 (Sun) 02:32:12 BRT
@@ -47,6 +48,11 @@
 
 # http://gnuplot.respawned.com/              GNUPlot On-Line
 # http://maxima-online.org/?inc=r-910537206  Maxima  On-Line
+
+
+
+# Frequent Pattern Mining
+# https://ashokharnal.wordpress.com/2014/02/18/discovering-frequent-patterns-using-mahout-command-line/
 
 
 
