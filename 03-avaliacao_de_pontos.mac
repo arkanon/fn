@@ -1,0 +1,95 @@
+/*
+
+  Arkanon <arkanon@lsd.org.br>
+  2015/11/14 (Sat) 00:24:15 BRS
+  2015/11/13 (Fri) 15:34:59 BRD
+
+  Inicia o processo
+    maxima --very-quiet --batch=03-avaliacao_de_pontos.mac
+
+  Acompanha a geraçao
+    . alias.sh
+    log
+
+  Para acompanhar com o arquivo de log editado no VIm, executar o comando ex
+    :set autoread
+
+  Compara a precisao da geracao com menos digitos com a precisao da geracao de 500 digitos
+    ./compare.sh 03-avaliacao_de_pontos-016dig-04000-10000-00050.log 7
+
+*/
+
+  load("ambiente.mac")$
+
+  x:1/%e^%e;
+
+  fpprec:50;
+
+  f(n,x,y) := block
+  (
+    [ i:1 ],
+    if x=0 then if remainder(n,2)=0 then 1 else 0 else
+    (
+      for i:1 thru n do y : x^y,
+      y
+    )
+  )$
+
+  git:sconcat( HOME , "/git/fn" )$
+
+/* f_k<n-1> : <value>b0$ */ f_k1 : 1$
+                            t_k1 : 0$
+
+/* fi       : f_k<n-1>$  */ fi : f_k1$ /* def: fi:1 */
+                            ti : t_k1$ /* def: ti:0 */
+/* k1       : k<n>$      */ k1 : 1$    /* def: k1:1 */
+
+/*
+  nk:2000*10000*50$
+  nj:1$
+  ni:1$
+*/
+
+  nk:10000$
+  nj:10000$
+  ni:50$
+
+  file:sconcat( git, "/03-avaliacao_de_pontos-", numpad(fpprec,3,"0",0,""), "dig-", numpad(nk,5,"0",0,""), "-", numpad(nj,5,"0",0,""), "-", numpad(ni,5,"0",0,""), ".log" )$
+
+  header:""$
+  if not file_search(file) then header:"----𝑘|𝑛=𝑘·𝑛ⱼ·𝑛ᵢ |-----tⱼᵢ------|--------tₜₒₜₐₗ---------|------data e hora (utc)-------|ƒₙ(1/𝑒ᵉ) → 1/𝑒 ≈ 0.36787944117144~%"$
+
+  out:opena( file )$
+
+  t0:ts()$
+  t0[4];
+  printf( out, sconcat(header,"~%-----|----------|------|-------|---------|-------------|~d|~a|~%"), t0[3], t0[4] )$
+
+  for k:k1 thru nk do
+  (
+    t1:ts(),
+    for j:1 thru nj do fi:bfloat(f(ni,x,fi)),
+    t2:ts(),
+    printf
+    (
+      out,
+      "~a|~a|~a|~a|~a|~a|~d|~a|~h~%",
+      numpad  ( k             ,  5," ", 0,""  ),
+      numpad  ( k*nj*ni       , 10," ", 0,""  ),
+      numpad  ( t2[1]-t1[1]   ,  4," ", 1,"0" ),
+      sf2msf  ( t2[1]-t1[1]   ,  1            ),
+      numpad  ( t2[1]-t0[1]+ti,  7," ", 1,"0" ),
+      sf2dhmsf( t2[1]-t0[1]+ti,  1            ),
+      t2[3],
+      t2[4],
+      fi
+    )
+  )$
+  sf2dhmsf(time(%)[1],1);
+  t2[4];
+
+  close(out)$
+
+  printf(true,"~h",fi)$
+
+/* EOF */
