@@ -1,21 +1,35 @@
 /*
 
   Arkanon <arkanon@lsd.org.br>
-  2015/11/14 (Sat) 01:39:11 BRS
+  2015/11/16 (Seg) 18:03:14 BRD
+  2015/11/14 (Sat) 00:24:15 BRS
   2015/11/13 (Fri) 15:34:59 BRD
 
   Inicia o processo
-    maxima --very-quiet --batch=03-avaliacao_de_pontos.mac
+    >| nohup.out
+    nohup maxima --very-quiet --batch=03-avaliacao_de_pontos.mac &
+    cat nohup.out
 
-  Acompanha a geraçao
-    . alias.sh
-    log
+  Finaliza o processo
+    killall -SIGINT maxima
 
-  Para acompanhar com o arquivo de log editado no VIm, executar o comando ex
+  Acompanha a iteração editando o log no VIm. Executar no vim o comando ex
     :set autoread
 
-  Compara a precisao da geracao com menos digitos com a precisao da geracao de 500 digitos
-    ./compare.sh 03-avaliacao_de_pontos-050dig-10000-10000-00050.log 45 watch
+  Carrega os aliases bash de acompanhamento do log e da convergência
+    . alias.sh
+
+  Acompanha a iteração
+    log0
+    log  # watch
+
+  Acompanha a convergência
+    conv0
+    conv1
+    conv  # watch
+
+  Compara a precisão da geração com menos dígitos com a precisão da geração de 500 dígitos
+    ./compare.sh 03-avaliacao_de_pontos-050dig-40000-10000-00050.log 7
 
 */
 
@@ -35,14 +49,14 @@
     )
   )$
 
-  git:sconcat( HOME , "/git/fn" )$
+  git:sconcat( HOME , "/git/f" )$
 
-/* f_k<n-1> : <value>b0$ */ f_k1 : 1$
-                            t_k1 : 0$
+/* f_k<n-1> : <value>b0$ */ f_k10000 : 0.36789218499945092103089174397761712633195497315805b0$
+                            t_k10000 : 232603.4$
 
-/* fi       : f_k<n-1>$  */ fi : f_k1$ /* def: fi:1 */
-                            ti : t_k1$ /* def: ti:0 */
-/* k1       : k<n>$      */ k1 : 1$    /* def: k1:1 */
+/* fi       : f_k<n-1>$  */ fi : f_k10000$ /* def: fi:1 */
+                            ti : t_k10000$ /* def: ti:0 */
+/* k1       : k<n>$      */ k1 : 10001$    /* def: k1:1 */
 
 /*
   nk:2000*10000*50$
@@ -50,7 +64,7 @@
   ni:1$
 */
 
-  nk:10000$
+  nk:40000$
   nj:10000$
   ni:50$
 
