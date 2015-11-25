@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Arkanon <arkanon@lsd.org.br>
+# 2015/11/20 (Sex) 15:36:30 BRD
 # 2015/11/17 (Tue) 06:42:31 BRD
 
   if [ $# = 0 ]
@@ -16,7 +17,7 @@
   {
     local dots=$(eval printf '.%.0s' {1..$dig})
     (
-      tail -n+4 $f | grep -v -- -- | sed '/^$/d' | uniq -c -s 87 -w 8
+      tail -n+4 $f | grep -v -- -- | sed '/^$/d' | uniq -c -s 88 -w 8
       echo
       tail -n2 $f | sed 's/^/      0 /'
     ) | cut -d\| -f1-4,6,8,9 | sed -r "s/([0-9])( +)/\1|\2/;s/(0\.36)(..)(..)($dots).+/\1 \2 \3 \4/"
@@ -45,7 +46,7 @@
                printf "%6d\n" $((i2-i1))
                i1=$i2
              done < <( echo "$sums" )
-             printf "\n%6d\n    ^\n    │\n FALTA" $more
+             printf "\n%6d\n   ^\n   │\n FALTA" $more
            ) \
           <( echo -e "$sums\n\n$done\n    ^\n    │\n  FEITO" | cut -c3- ) \
           <( cut -d\| -f2- <<< "$c0"    | cut -c2- | sed "s/^$/\n$kfin|$n|<—— PREVISTO\n/g" ) \

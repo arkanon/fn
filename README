@@ -1,6 +1,7 @@
 # vim: ft=sh
 
 # Arkanon <arkanon@lsd.org.br>
+# 2015/11/19 (Thu) 00:46:25 BRST
 # 2015/11/12 (Thu) 00:01:56 BRST
 # 2015/11/07 (Sat) 09:46:59 BRST
 # 2015/10/20 (Tue) 01:07:51 BRD
@@ -61,6 +62,10 @@
 # http://en.wikipedia.org/wiki/reuben_goodstein
 # http://en.wikipedia.org/wiki/Lambert_W_function
 
+# http://www.tetration.org/
+# http://www.quora.com/What-is-the-numerical-value-of-pi-tetrated-to-the-pi
+# http://en.citizendium.org/wiki/Tetration
+# http://math.stackexchange.com/questions/238970/how-to-evaluate-fractional-tetrations
 # http://blogs.scientificamerican.com/roots-of-unity/grahame28099s-number-is-too-big-for-me-to-tell-you-how-big-it-is/
 # http://brilliant.org/problems/numerical-integration-of-exponential-tetration/
 # http://euler.rene-grothmann.de/Programs/22%20-%20Maxima%20-%20More%20Details.html
