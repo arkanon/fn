@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Arkanon <arkanon@lsd.org.br>
+# 2015/11/25 (Qua) 14:28:36 BRD
+# 2015/11/25 (Wed) 01:04:28 BRS
 # 2015/11/20 (Sex) 15:36:30 BRD
 # 2015/11/17 (Tue) 06:42:31 BRD
 
@@ -10,14 +12,14 @@
     exit
   fi
 
-  export   f=03-avaliacao_de_pontos-050dig-40000-10000-00050.log
+  export   f=04-avaliacao_de_pontos-050dig-100000-010000-000050.log
   export dig=$1
 
   conv0()
   {
     local dots=$(eval printf '.%.0s' {1..$dig})
     (
-      tail -n+4 $f | grep -v -- -- | sed '/^$/d' | uniq -c -s 88 -w 8
+      tail -n+4 $f | grep -v -- -- | sed '/^$/d' | uniq -c -s 89 -w 8
       echo
       tail -n2 $f | sed 's/^/      0 /'
     ) | cut -d\| -f1-4,6,8,9 | sed -r "s/([0-9])( +)/\1|\2/;s/(0\.36)(..)(..)($dots).+/\1 \2 \3 \4/"
@@ -49,7 +51,7 @@
              printf "\n%6d\n   ^\n   │\n FALTA" $more
            ) \
           <( echo -e "$sums\n\n$done\n    ^\n    │\n  FEITO" | cut -c3- ) \
-          <( cut -d\| -f2- <<< "$c0"    | cut -c2- | sed "s/^$/\n$kfin|$n|<—— PREVISTO\n/g" ) \
+          <( cut -d\| -f2- <<< "$c0"    | cut -c2- | sed "s/^$/\n $kfin|$n|<—— PREVISTO\n/g" ) \
     | sed -r 's/\|/   /g'
   }
 

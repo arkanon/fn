@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # Arkanon <paulo.bagatini@softplan.com.br>
+# 2015/11/25 (Qua) 13:12:47 BRD
+# 2015/11/25 (Wed) 01:05:12 BRS
 # 2015/11/20 (Fri) 20:45:00 BRD
 # 2015/11/19 (Qui) 14:57:36 BRD
 
-  f=03-avaliacao_de_pontos-050dig-40000-10000-00050.log
+  f=04-avaliacao_de_pontos-050dig-100000-010000-000050.log
 
   for i in {99..78}
   do

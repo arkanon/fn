@@ -1,9 +1,10 @@
 # vim: ft=sh
 
 # Arkanon <arkanon@lsd.org.br>
-# 2015/11/19 (Thu) 00:46:25 BRST
-# 2015/11/12 (Thu) 00:01:56 BRST
-# 2015/11/07 (Sat) 09:46:59 BRST
+# 2015/11/25 (Wed) 01:09:14 BRS
+# 2015/11/19 (Thu) 00:46:25 BRS
+# 2015/11/12 (Thu) 00:01:56 BRS
+# 2015/11/07 (Sat) 09:46:59 BRS
 # 2015/10/20 (Tue) 01:07:51 BRD
 # 2015/10/18 (Sun) 02:32:12 BRT
 # 2015/10/13 (Tue) 02:36:31 BRS
@@ -20,7 +21,7 @@
 
 
 
-# wxMaxima   15.04.0-1build1                 dpkg -s wxMaxima | grep Version
+# wxMaxima   15.08.2-1~ppa2~wily             dpkg -s wxMaxima | grep Version
 
 # wxWidgets   3.0.2+dfsg-1.2                 dpkg -s $(apt-cache search libwxbase$(ldd $(which wxmaxima) \
 #                                             | sed -rn '/libwx_baseu-/s/\t[^0-9]+([0-9.]+).so.([0-9.]+).+/\1-\2/p') \
@@ -33,10 +34,10 @@
 # GnuPlot     5.0.1                          gnuplot --version | sed 's/ patchlevel /./'
 
 # LUbuntu    15.10                           grep -w VERSION /etc/os-release
-# Linux       4.2.0-16-generic #19 SMP       uname -srv
+# Linux       4.2.0-19-generic #23 SMP       uname -srv
 
-# Intel Core  Duo T2450 2.00GHz 32-bit       (spiderman)   LC_MESSAGES=C lscpu | grep -e op-mode -e name
-# Intel Core2 Duo T6570 2.10GHz 64-bit       (venom)
+# Intel Core  Duo T2450 2.00GHz 32-bit       spiderman   LC_MESSAGES=C lscpu | grep -e op-mode -e name
+# Intel Core2 Duo T6570 2.10GHz 64-bit       venom
 
 
 
