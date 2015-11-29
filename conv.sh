@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Arkanon <arkanon@lsd.org.br>
+# 2015/11/27 (Sex) 09:18:56 BRD
 # 2015/11/25 (Qua) 14:28:36 BRD
 # 2015/11/25 (Wed) 01:04:28 BRS
 # 2015/11/20 (Sex) 15:36:30 BRD
@@ -12,7 +13,7 @@
     exit
   fi
 
-  export   f=04-avaliacao_de_pontos-050dig-100000-010000-000050.log
+  export   f=$HOME/git/f/04-avaliacao_de_pontos-050dig-100000-010000-000050.log
   export dig=$1
 
   conv0()
